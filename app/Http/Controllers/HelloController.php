@@ -41,7 +41,7 @@ h1 { font-size: 30px; text-align: right; color: #eee; margin: 15px 0 0 0; }
 </body>
 </html>
 EOF;
-        $response->setController($html);
+        $response->setContent($html);
         return $response;
     }
 }
