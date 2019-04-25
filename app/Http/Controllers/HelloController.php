@@ -50,15 +50,16 @@ public function index()
 //         'msg'=>'これはBladeを利用したサンプルです。'
 //         // 'id'=>$request->id,
 // ];
-    return view('hello.index');
+    $data = ['one', 'two', 'three', 'four', 'five'];
+    return view('hello.index', ['data'=>$data]);
     }
 
-public function post(Request $request) 
-    {
-    // $msg  = $request->msg;
-    // $data = [
-    //     'msg'=>'こんにちは、' . $msg . 'さん！',
-    // ];
-    return view('hello.index', ['msg'=>$request->msg]);
-    }
+// public function post(Request $request) 
+//     {
+//     // $msg  = $request->msg;
+//     // $data = [
+//     //     'msg'=>'こんにちは、' . $msg . 'さん！',
+//     // ];
+//     return view('hello.index', ['msg'=>$request->msg]);
+//     }
 }
