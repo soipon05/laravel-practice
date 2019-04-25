@@ -50,7 +50,7 @@ public function index()
 //         'msg'=>'これはBladeを利用したサンプルです。'
 //         // 'id'=>$request->id,
 // ];
-    return view('hello.index', ['msg'=>'']);
+    return view('hello.index');
     }
 
 public function post(Request $request) 
