@@ -50,7 +50,12 @@ public function index()
 //         'msg'=>'これはBladeを利用したサンプルです。'
 //         // 'id'=>$request->id,
 // ];
-    $data = ['one', 'two', 'three', 'four', 'five'];
+    $data = [
+        ['name'=>'山田たろう', 'mail'=>'taro@yamada'],
+        ['name'=>'田中はなこ', 'mail'=>'hanako@flower'],
+        ['name'=>'鈴木さちこ', 'mail'=>'sachico@happy']
+        
+    ];
     return view('hello.index', ['data'=>$data]);
     }
 
