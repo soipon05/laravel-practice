@@ -44,12 +44,21 @@ class HelloController extends Controller
 //         $response->setContent($html);
 //         return $response;
 //     }
-public function index(Request $request) {
-    $data = [
-        'msg'=>'これはコントローラーから渡されたメッセージです。',
-        'id'=>$request->id
-];
-    return view('hello.index', $data);
-    
-}
+public function index() 
+    {
+//     $data = [
+//         'msg'=>'これはBladeを利用したサンプルです。'
+//         // 'id'=>$request->id,
+// ];
+    return view('hello.index', ['msg'=>'']);
+    }
+
+public function post(Request $request) 
+    {
+    // $msg  = $request->msg;
+    // $data = [
+    //     'msg'=>'こんにちは、' . $msg . 'さん！',
+    // ];
+    return view('hello.index', ['msg'=>$request->msg]);
+    }
 }
