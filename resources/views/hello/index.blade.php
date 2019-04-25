@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hello/Index</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
-</head>
-<body>
-    <h1>Blade/Index</h1>
-    <p>&#064;whileディレクティブの例</p>
-    <ol>
-    @php
-    $counter = 0;
-    @endphp
-    @while ($counter < count($data))
-    <li>{{$data[$counter]}}</li>
-    @php
-    $counter++;
-    @endphp
-    @endwhile
-    </ol>
-</body>
-</html>
+@extends('layouts.helloapp')
+
+@section('title', 'Index')
+@section('menubar')
+    @parent
+    インデックスページ
+    <p>index</p>
+@endsection
+
+@section('content')
+    <p>ここが本文のコンテンツです</p>
+    <p>必要な記述ができます</p>
+@endsection
+
+@section('footer')
+copyright 2017 
+@endsection
