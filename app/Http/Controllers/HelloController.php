@@ -44,19 +44,9 @@ class HelloController extends Controller
 //         $response->setContent($html);
 //         return $response;
 //     }
-public function index() 
+public function index(Request $request) 
     {
-//     $data = [
-//         'msg'=>'これはBladeを利用したサンプルです。'
-//         // 'id'=>$request->id,
-// ];
-    // $data = [
-    //     ['name'=>'山田たろう', 'mail'=>'taro@yamada'],
-    //     ['name'=>'田中はなこ', 'mail'=>'hanako@flower'],
-    //     ['name'=>'鈴木さちこ', 'mail'=>'sachico@happy']
-        
-    // ];
-    return view('hello.index', ['message'=>'Hello!']);
+        return view('hello.index', ['data'=>$request->data]);
     }
 
 // public function post(Request $request) 

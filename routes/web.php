@@ -11,18 +11,14 @@
 |
 */
 
+use App\Http\Middleware\HelloMiddleware;
+
 Route::get('/test', function () {
     echo 'test';
 });
 
-// // Route::get('hello/{id?}/{pass?}', 'HelloController@index');
-// Route::get('hello', 'HelloController@index');
-// Route::get('hello/other', 'HelloController@other');
-// Route::get('hello', 'HelloController');
-// Route::get('hello', function() {
-//     return view('hello.index');
-// });
-
-Route::get('hello',         'HelloController@index');
+// Route::get('hello',         'HelloController@index');
 // Route::get('hello/{id?}', 'HelloController@index');
 Route::post('hello',        'HelloController@post');
+Route::get('hello',         'HelloController@index')
+    ->middleware(HelloMiddleware::class);
