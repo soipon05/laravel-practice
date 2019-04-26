@@ -20,5 +20,4 @@ Route::get('/test', function () {
 // Route::get('hello',         'HelloController@index');
 // Route::get('hello/{id?}', 'HelloController@index');
 Route::post('hello',        'HelloController@post');
-Route::get('hello',         'HelloController@index')
-    ->middleware(HelloMiddleware::class);
+Route::get('hello',         'HelloController@index');
