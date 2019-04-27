@@ -30,20 +30,22 @@ class HelloRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'mail' => 'email',
-            'age'  => 'numeric|hello',
+            // 'name'  => 'required',
+            // 'mail'  => 'email',
+            // 'age'   => 'numeric|hello',
+            'msg'   => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => '名前は必ず入力してください。',
-            'mail.email'    => 'メールアドレスが必要です。',
-            'age.numeric'   => '年齢を整数で記入ください。',
-            'age.between'   => '年齢は0~150の間で入力ください。',
-            'age.hello'     => 'Hello! 入力は偶数のみ受け付けます',
+            // 'name.required' => '名前は必ず入力してください。',
+            // 'mail.email'    => 'メールアドレスが必要です。',
+            // 'age.numeric'   => '年齢を整数で記入ください。',
+            // 'age.between'   => '年齢は0~150の間で入力ください。',
+            // 'age.hello'     => 'Hello! 入力は偶数のみ受け付けます',
+            'msg.required'  => 'メッセージは必ず入力してください。'
         ];
     }
 }
