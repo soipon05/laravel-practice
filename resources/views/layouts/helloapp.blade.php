@@ -15,6 +15,8 @@
     .menutitle { font-size: 14px; font-weight: bold; margin: 0;}
     .content { margin: 10px; }
     .footer { text-align: right; font-size: 10px; margin: 10px; border-bottom: 1px solid #ccc;}
+    th { background-color: #999; color: #fff; padding: 5px 10px; }
+    td { border: 1px solid #aaa; color: #999; padding: 5px 10px; }
   </style>
 </head>
 <body>
