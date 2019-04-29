@@ -59,19 +59,27 @@ public function index(Request $request)
         return view('hello.index', ['items' => $items]);
     }
 
-public function post(HelloRequest $request)
+public function post(Request $request)
     {
-        // $validate_rule = [
-        //     'msg' => 'required',
-        // ];
-        // $this->validate($request, $validate_rule);
-        $msg        = $request->msg;
-        $response   = new Response(view('hello.index', ['msg'=>'「' . $msg .'」をクッキーに保存しました。']));
-
-        $response->cookie('msg', $msg, 100);
-        return $response;
-        // return view('hello.index', ['msg'=>'正しく入力されました！']);
+        $items = DB::select('select * from people');
+        return view('hello.index', ['items' => $items]);
     }
+
+public function add(Request $request)
+{
+    return view('hello.add');
+}
+
+public function create(Request $request)
+{
+    $param = [
+        'name' => $request->name,
+        'mail' => $request->mail,
+        'age'  => $request->age,
+    ];
+    DB::insert('insert into people (name, mail, age) values (:name, :mail, :age)', $param);
+    return redirect('/hello');
+}
 
 // public function post(Request $request) 
 //     {
