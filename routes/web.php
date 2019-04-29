@@ -22,5 +22,12 @@ Route::get('/test', function () {
 Route::post('hello',        'HelloController@post');
 Route::get('hello',         'HelloController@index')
     ->middleware('helo');
+// Peopleの新規作成
 Route::get('hello/add',     'HelloController@add');
 Route::post('hello/add',    'HelloController@create');
+// Peopleの編集＆更新
+Route::get('hello/edit',     'HelloController@edit');
+Route::post('hello/edit',    'HelloController@update');
+// Peopleの削除画面&削除実行
+Route::get('hello/del',     'HelloController@del');
+Route::post('hello/del',    'HelloController@remove');
