@@ -50,3 +50,7 @@ Route::post('person/add',   'PersonController@create');
 // EditとUpdate
 Route::get('person/edit',   'PersonController@edit');
 Route::post('person/edit',  'PersonController@update');
+
+// DeleteとRemove
+Route::get('person/delete', 'PersonController@delete');
+Route::post('person/delete', 'PersonController@remove');
