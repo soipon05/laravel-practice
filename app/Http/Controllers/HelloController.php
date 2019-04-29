@@ -53,7 +53,7 @@ public function index(Request $request)
             $param = ['id' => $request->id];
             $items = DB::select('select * from people where id = :id', $param);
         } else {
-            $items = DB::select('select * from people');
+            $items = DB::table('people')->get();
         }
         
         return view('hello.index', ['items' => $items]);
@@ -115,12 +115,12 @@ public function remove(Request $request)
     DB::delete('delete from people where id = :id', $param);
     return redirect('/hello');
 }
-// public function post(Request $request) 
-//     {
-//     // $msg  = $request->msg;
-//     // $data = [
-//     //     'msg'=>'こんにちは、' . $msg . 'さん！',
-//     // ];
-//     return view('hello.index', ['msg'=>$request->msg]);
-//     }
+
+public function show(Request $request)
+{
+    $id = $request->id;
+    $item = DB::table('people')->where('id', $id)->first();
+    return view('hello.show', ['item' => $item]);
+}
+
 }

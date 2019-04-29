@@ -31,3 +31,5 @@ Route::post('hello/edit',    'HelloController@update');
 // Peopleの削除画面&削除実行
 Route::get('hello/del',     'HelloController@del');
 Route::post('hello/del',    'HelloController@remove');
+// Peopleの詳細画面
+Route::get('hello/show',    'HelloController@show');
