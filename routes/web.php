@@ -19,23 +19,25 @@ Route::get('/test', function () {
 
 // Route::get('hello',         'HelloController@index');
 // Route::get('hello/{id?}', 'HelloController@index');
-Route::post('hello',        'HelloController@post');
-Route::get('hello',         'HelloController@index')
-    ->middleware('helo');
-// Peopleの新規作成
-Route::get('hello/add',     'HelloController@add');
-Route::post('hello/add',    'HelloController@create');
-// Peopleの編集＆更新
-Route::get('hello/edit',     'HelloController@edit');
-Route::post('hello/edit',    'HelloController@update');
-// Peopleの削除画面&削除実行
-Route::get('hello/del',     'HelloController@del');
-Route::post('hello/del',    'HelloController@remove');
-// Peopleの詳細画面
-Route::get('hello/show',    'HelloController@show');
-
-Route::get('hello/rest',    'HelloController@rest');
-
+Route::post('hello',            'HelloController@post');
+Route::get('hello',             'HelloController@index')
+    ->middleware('helo');   
+// Peopleの新規作成 
+Route::get('hello/add',         'HelloController@add');
+Route::post('hello/add',        'HelloController@create');
+// Peopleの編集＆更新   
+Route::get('hello/edit',         'HelloController@edit');
+Route::post('hello/edit',        'HelloController@update');
+// Peopleの削除画面&削除実行    
+Route::get('hello/del',         'HelloController@del');
+Route::post('hello/del',        'HelloController@remove');
+// Peopleの詳細画面 
+Route::get('hello/show',        'HelloController@show');
+    
+Route::get('hello/rest',        'HelloController@rest');
+    
+Route::get('hello/session',     'HelloController@ses_get');
+Route::post('hello/session',    'HelloController@ses_put');
 
 // Person
 // 
@@ -57,9 +59,15 @@ Route::post('person/edit',  'PersonController@update');
 Route::get('person/delete', 'PersonController@delete');
 Route::post('person/delete', 'PersonController@remove');
 
+// Board
+// 
+
 Route::get('board',         'BoardController@index');
 
 Route::get('board/add',     'BoardController@add');
 Route::post('board/add',    'BoardController@create');
+
+// Restdata
+// 
 
 Route::resource('rest', 'RestappController');
