@@ -1,5 +1,5 @@
 <table>
-    <form action="rest" method="post">
+    <form action="/rest" method="post">
         {{ csrf_field() }}
         <tr>
             <th>message: </th>

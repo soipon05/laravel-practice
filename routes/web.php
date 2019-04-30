@@ -34,6 +34,8 @@ Route::post('hello/del',    'HelloController@remove');
 // Peopleの詳細画面
 Route::get('hello/show',    'HelloController@show');
 
+Route::get('hello/rest',    'HelloController@rest');
+
 
 // Person
 // 
