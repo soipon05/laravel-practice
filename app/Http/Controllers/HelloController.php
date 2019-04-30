@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\HelloRequest;
 use Validator;
+use App\Person;
 
 class HelloController extends Controller
 {
@@ -14,10 +15,7 @@ class HelloController extends Controller
 
     public function index(Request $request) 
         {
-            $items = DB::table('people')
-            ->orderBy('age', 'desc')
-            ->get();
-            
+            $items = DB::table('people')->simplePaginate(3);
             return view('hello.index', ['items' => $items]);
         }
 
