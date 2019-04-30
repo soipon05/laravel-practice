@@ -15,8 +15,16 @@ class HelloController extends Controller
 
     public function index(Request $request) 
         {
-            $items = DB::table('people')->simplePaginate(3);
-            return view('hello.index', ['items' => $items]);
+            // dd($request->sort);
+            // $items = DB::table('people')->simplePaginate(3);
+            if (isset($request->sort)) {
+                $sort = $request->sort;
+            }else {
+                $sort = "id";
+            }
+            $items = Person::orderBy($sort, 'asc')->simplePaginate(3);
+            $param = ['items' => $items, 'sort' => $sort]; 
+            return view('hello.index', $param);
         }
 
     public function post(Request $request)
