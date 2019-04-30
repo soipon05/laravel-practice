@@ -13,6 +13,13 @@
 
 use App\Http\Middleware\HelloMiddleware;
 
+Route::get('/', function () {
+    $view = view('welcome');
+    // Dispatcherクラス経由でEventを実行する場合
+    // \Event::dispatch(new \App\Events\PublishProcessor(1));
+    return $view;
+});
+
 Route::get('/test', function () {
     echo 'test';
 });
