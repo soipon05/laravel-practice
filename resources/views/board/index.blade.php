@@ -1,6 +1,6 @@
 @extends('layouts.helloapp')
 
-@section('title', 'Person.Index')
+@section('title', 'Board.Index')
 @section('menubar')
     @parent
     インデックスページ
@@ -11,11 +11,13 @@
 <p>ID: title</p>
     <table>
         <tr>
-            <th>Data</th>
+            <th>Message</th>
+            <th>Name</th>
         </tr>
         @foreach ($items as $item)
             <tr>
-                <td>{{ $item->getData() }}</td>
+                <td>{{ $item->message }}</td>
+                <td>{{ $item->person->name }}</td>
             </tr>
         @endforeach
     </table>
