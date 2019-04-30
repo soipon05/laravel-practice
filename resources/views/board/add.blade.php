@@ -1,10 +1,10 @@
 @extends('layouts.helloapp')
 
-@section('title', 'Person.add')
+@section('title', 'Board.add')
 @section('menubar')
     @parent
     投稿ページ
-    <p>Person.add</p>
+    <p>Board.add</p>
 @endsection
 
 @section('content')
@@ -16,12 +16,12 @@
                 <td><input type="number" name="person_id" ></td>
             </tr>
             <tr>
-                <th>person title: </th>
-                <td><input type="text" name="person_title" ></td>
+                <th>title: </th>
+                <td><input type="text" name="title" ></td>
             </tr>
             <tr>
-                <th>person message: </th>
-                <td><input type="text" name="person_message" ></td>
+                <th>message: </th>
+                <td><input type="text" name="message" ></td>
             </tr>
             <tr>
                 <th></th>
