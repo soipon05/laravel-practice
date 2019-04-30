@@ -22,7 +22,7 @@ class HelloController extends Controller
             }else {
                 $sort = "id";
             }
-            $items = Person::orderBy($sort, 'asc')->simplePaginate(3);
+            $items = Person::orderBy($sort, 'asc')->paginate(3);
             $param = ['items' => $items, 'sort' => $sort]; 
             return view('hello.index', $param);
         }
